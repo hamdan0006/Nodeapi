@@ -1,0 +1,465 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  font-family: "Poppins", sans-serif;
+
+}
+
+#logo-img{
+    width: 200px;
+    height: 200px;
+   }
+.navbar {
+    width: 100%;
+    height: 54px;
+    position: fixed; /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    z-index: 999;
+    transition: background 0.3s, box-shadow 0.3s; /* Added transition for smooth change */
+}
+.pagination-btn-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.pagination-btn{
+    width: 80px;
+    height: 35px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    margin: 0px 0px 0px 5px;
+    cursor: pointer;
+}
+#page-info{
+    font-size: 20px ;
+    margin: 6px 0px 0px 9px;
+
+}
+
+.navbar-container {
+    width: 1280px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.navbar .main-menu {
+    width: 100%;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .main-menu .nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar .main-menu .nav-menu .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .main-menu .nav-menu .list .list-item {
+    list-style: none;
+    padding: 10px 15px;
+}
+
+.navbar .main-menu .nav-menu .list .list-item .navbar-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(255, 221, 0);
+    transition: all .1s ease-in-out;
+}
+
+.navbar .main-menu .nav-menu .list .list-item .navbar-link:hover {
+    color: rgb(196, 196, 194);
+}
+
+.showcase {
+    width: 100%;
+    height: 10vh;
+    /* background: url('./assets/money-8458556_1280.jpg') no-repeat; */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.search-section{
+    display: flex;
+    justify-content: center;
+}
+#cardname{
+    width: 450px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 6px;
+}
+#cardname:focus{
+    outline: none;
+}
+#search-btn{
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    margin-left: 6px;
+    background: black;
+    color: yellow;
+    border-radius: 8px;
+   
+
+}
+#search-btn:hover{
+    background: linear-gradient(90deg, rgba(107,133,63,1) 0%, rgba(100,120,13,1) 35%, rgba(255,252,0,1) 100%);
+    color: black;
+}
+.showcase .overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* background: rgba(0, 0, 0, .5); */
+    position: absolute;
+}
+
+.showcase .content {
+    color: azure;
+    z-index: 1;
+    text-align: center;
+}
+
+.extra-content {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.navbar.scrolled {
+  background: #363636;
+  /* Set background color to black */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* credit-card-img */
+.image-holder{
+    min-width: 130px;
+    min-height: 200px;
+    
+}
+.card-img{
+    min-width: 130px;
+    min-height: 150px;
+    
+}
+.card-heading{
+  font-size: 18px;
+  font-weight: 500;
+}
+.card-dtls{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem;
+    cursor: pointer;
+}
+
+.cards-section {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 1rem;
+    padding: 1rem;
+    flex: 1 1 300px;
+    max-width: 300px;
+    text-align: center;
+    transition: 800ms;
+}
+.cards-section:hover{
+    transform: scale(1.09);
+}
+
+.card-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hamburger-icon-container{
+    
+display: none;
+}
+#cancel{
+    display: none;
+}
+/* filter  */
+
+#issuer{
+    height: 50px;
+    border-radius: 9px;
+    color: white;
+    padding: 5px;
+    width: 200px;
+    border: none;
+    margin-left: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background: #494949;
+    
+}
+#issuer:focus{
+    outline: none;
+}
+
+.search-box{
+    display: flex;
+
+}
+.pagination-sec{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 30px 0px;
+}
+#prev-btn, #next-btn {
+    background-color: #000000; /* Blue background for active state */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#prev-btn:disabled, #next-btn:disabled {
+    background-color: #d3d3d3; /* Light grey background for disabled state */
+    color: #a9a9a9; /* Darker grey text color for disabled state */
+    cursor: not-allowed; /* Change cursor to not-allowed when disabled */
+    opacity: 0.6; /* Make the button look dull when disabled */
+}
+
+#prev-btn:hover, #next-btn:hover {
+    background-color: #2b2b2b; /* Darker blue on hover */
+}
+
+/* Add some spacing between buttons */
+#prev-btn, #next-btn {
+    margin: 0 5px;
+}
+
+
+@media screen and (max-width :764px){
+
+/* search section  */
+#issuer{
+    margin-left: 0px;
+    margin-top: 12px;
+
+}
+.search-section{
+    flex-direction: column;
+}
+
+#cardname{
+    width: 70%;
+}
+#search-btn{
+    width: 29%;
+}
+
+.search-box{
+margin: 10px;
+    
+}
+
+    
+  .logo{
+    display: none;
+    
+  
+  }
+  .cross-container{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+
+  #cancel{
+ 
+    display: inline;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .hamburger-icon-container{
+    margin: 25px 0px 0px 25px;
+    display: inline;
+    background: transparent;
+  }
+  .line-icon{
+    color: black;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 20px;
+  
+  }
+  
+.navbar {
+  width: 70%;
+  height: 100vh;
+  position: absolute; /* Changed from absolute to fixed */
+  top: 0;
+  left: -70%;
+  background: black;
+  z-index: 999;
+  transition: background 0.3s, box-shadow 0.3s;
+  transition: 1s ease;
+   /* Added transition for smooth change */
+}
+.todefault{
+  position: absolute; /* Changed from absolute to fixed */
+  top: 0;
+  left: 0;
+}
+
+.navbar-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  z-index: 99;
+  
+}
+.heading-container{
+width: 100%;
+height: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+
+.content h2{
+font-size: 70px;
+font-weight: 500;
+}
+.content span{
+font-size: 60px;
+font-weight: 300;
+}
+.main-btn{
+width: 230px;
+height: 55px;
+
+font-size: 20px;
+border: 3px solid black;
+border-radius: 20px;
+cursor: pointer;
+background: black;
+color: white;
+}
+.main-btn:hover{
+background: transparent;
+color: white;
+}
+
+.navbar .main-menu {
+  width: 100%;
+  height: 54px;
+  display: flex;
+  align-items: flex-start;
+ flex-direction: column;
+}
+
+.navbar .main-menu .nav-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar .main-menu .nav-menu .list {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.navbar .main-menu .nav-menu .list .list-item {
+  list-style: none;
+  padding: 10px 15px;
+}
+
+.navbar .main-menu .nav-menu .list .list-item .navbar-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(165, 166, 167);
+  transition: all .1s ease-in-out;
+}
+
+.navbar .main-menu .nav-menu .list .list-item .navbar-link:hover {
+  color: rgb(54, 53, 53);
+}
+}
+
+@media (min-width: 1024px) {
+    #cards-container {
+        justify-content: flex-start;
+    }
+
+    .cards-section {
+        flex: 1 1 calc(33.333% - 2rem);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #issuer{
+        margin-left: 0px;
+        margin-top: 12px;
+    }
+    .search-section{
+        flex-direction: column;
+    }
+    
+    .cards-section {
+        flex: 1 1 calc(50% - 2rem);
+    }
+
+    #issuer{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cards-section {
+        flex: 1 1 100%;
+    }
+}

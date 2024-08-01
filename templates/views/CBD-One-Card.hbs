@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{card.cardname}}</title>
+    <link rel="icon" href="/logo.png?v=2">
+    <link rel="stylesheet" href="/card-style.css">
+    <link rel="stylesheet" href="/credit-cards.css">
+
+</head>
+<style>
+
+    .main-heading{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+}
+.card-container {
+    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: #222; /* Darker background for content */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-container h1 {
+    color: #ffd700; /* Yellow color for heading */
+    text-align: center;
+}
+
+.card-container p.tagline {
+    font-size: 1.2em;
+    text-align: center;
+    color: #fff; /* White text color */
+    margin: 10px 0;
+}
+
+.card-container h2 {
+    color: #ffd700; /* Yellow color for subheading */
+    margin-top: 20px;
+}
+
+.card-container ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.card-container ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #fff; /* White text color */
+}
+
+.card-container ul li strong {
+    color: #ffd700; /* Yellow color for strong emphasis */
+}
+
+.card-container p.target-audience {
+    font-size: 1em;
+    text-align: center;
+    color: #ffd700; /* Yellow color for target audience */
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        padding: 10px;
+    }
+
+    .card-container p.tagline,
+    .card-container ul li,
+    .card-container p.target-audience {
+        font-size: 1em;
+    }
+}
+</style>
+
+<body>
+  
+
+  
+    <h1 class="main-heading">CBD - One Card
+
+</h1>
+
+    
+
+    <section class="form-sec">
+
+    <form id="userForm">
+        <div class="inpt-dtls">
+        
+        <input type="text" id="username" name="username" class="field" required placeholder="Your name"><br><br>
+        
+        
+        <input type="text" id="phone" name="phone" class="field" required placeholder="Phone Number">
+        </div>
+
+
+        <div class="inpt-dtls">
+        
+        <input type="email" id="email" name="email" class="field" required placeholder="Email">
+        
+        
+        <input type="number" id="salary" name="salary" class="field" required placeholder="Your Salary">
+        </div>
+        <!-- Hidden fields with default values -->
+        <input type="hidden" name="hiddenData1" id="hiddenData1" value="CBD-One-Card">
+       
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    </section>
+
+   <div class="card-container">
+        <h1>Free for Life Card</h1>
+        <p class="tagline">Benefit from discounts, choose your design, and enjoy lounge access while earning cashback at popular merchants.</p>
+        
+        <h2>Joining Offer</h2>
+        <p>Double cashback for the first two months until 31st March 2024</p>
+        
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Max Monthly Cashback:</strong> AED 135 on a minimum AED 5,000 spending in a calendar month</li>
+            <li>Pay per month</li>
+            <li>Choose your design</li>
+            <li>Cashback</li>
+            <li>Airport lounge access</li>
+            <li>Lifestyle benefits</li>
+        </ul>
+        <p class="target-audience">Ideal for younger mass customers seeking lifestyle perks and cashback benefits.</p>
+    </div>
+
+    <script>
+        document.getElementById('userForm').onsubmit = async function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const salary = document.getElementById('salary').value;
+            const hiddenData1 = document.getElementById('hiddenData1').value;
+            
+
+            // Validation
+            if (username.length < 3) {
+                alert('Username must be at least 3 characters long.');
+                return;
+            }
+            if (phone.length < 10 || phone.length > 20) {
+                alert('Phone number must be between 10 and 20 characters long.');
+                return;
+            }
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            if (salary < 5000) {
+                alert('Salary must be at least 5000.');
+                return;
+            }
+
+            const formData = { username, phone, email, salary, hiddenData1 };
+
+            try {
+                // Send data to the server using fetch
+                const response = await fetch('/cards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Thanks for Contacting');
+                    window.location.href = '/'; // Redirect to home page
+                } else {
+                    const errorData = await response.json();
+                    alert('Failed to save data: ' + errorData.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        };
+    </script>
+</body>
+</html>

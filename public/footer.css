@@ -1,0 +1,114 @@
+footer{
+    background: #161919;
+    width: 100%;
+    height: 50vh;
+}
+.content-container{
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+   display: flex;
+   flex-wrap: wrap;
+
+}
+.footer-content-sec{
+    flex: 1;
+}
+.footer-txt{
+    padding: 60px 0px 60px 0px;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+.content-container p{
+    color: white;
+}
+.logo-sec{
+    display: flex;
+  
+}
+.footer-logos{
+    margin-right: 15px;
+    
+ 
+}
+
+.footer-logos a {
+    text-decoration: none; 
+    color: #333; 
+    font-size: 18px; 
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.footer-logos a:hover {
+    color: #eab71f; /* Change text color on hover */
+}
+
+.f-logo {
+    font-size: 24px; /* Size of the Font Awesome icon */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+    color: rgb(177, 175, 175);
+}
+
+.footer-logos a:hover .f-logo {
+    transform: scale(1.2); /* Scale icon on hover */
+}
+.footer-btn{
+    width: 140px;
+    height: fit-content;
+    padding: 10px;
+    border:1px solid rgba(255, 255, 255, 0.2) ;
+    background: #111111;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+.footer-btn:hover{
+    border:1px solid #eab71f;
+}
+.footer-conatct.location-icon{
+    color: white;
+    font-size: 18px;
+}
+.footer-conatct h3{
+    color: yellow;
+    font-size: 40px;
+    font-weight: 100;
+}
+.footer-conatct h4{
+    font-size: 20px;
+    font-weight: 100;
+    color: white;
+}
+.location-icon-container{
+margin-top: 20px;
+}
+.location-icon{
+    color: white;
+    font-size: 20px;
+}
+
+@media screen and (max-width :764px){
+    footer{
+        
+        height: 60vh;
+    }
+    .content-container{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .footer-content-sec{
+        width: 100%;
+        flex-basis: 100%;
+    }
+    .logo-sec{
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      
+    }
+    .footer-logos {
+        flex-basis: 50%;
+        
+     
+    }
+    
+}

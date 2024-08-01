@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{card.cardname}}</title>
+      <link rel="stylesheet" href="/card-style.css">
+    <link rel="stylesheet" href="/credit-cards.css">
+</head>
+<style>
+
+.card-benefits {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.card-benefits h1,
+.card-benefits h2 {
+    color: #ffd700;
+    text-align: center;
+}
+
+.card-benefits h2 {
+    margin-top: 20px;
+}
+
+.card-benefits p,
+.card-benefits ul {
+    color: #fff;
+}
+
+.card-benefits ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.card-benefits ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+    .card-benefits {
+        padding: 10px;
+    }
+
+    .card-benefits p,
+    .card-benefits ul li {
+        font-size: 1em;
+    }
+}
+</style>
+<body>
+  
+   <h1 class="main-heading">ADCB Etihad Guest Infinite Credit-Card</h1>
+
+    <section class="form-sec">
+
+    <form id="userForm">
+        <div class="inpt-dtls">
+        
+        <input type="text" id="username" name="username" class="field" required placeholder="Your name"><br><br>
+        
+        
+        <input type="text" id="phone" name="phone" class="field" required placeholder="Phone Number">
+        </div>
+
+
+        <div class="inpt-dtls">
+        
+        <input type="email" id="email" name="email" class="field" required placeholder="Email">
+        
+        
+        <input type="number" id="salary" name="salary" class="field" required placeholder="Your Salary">
+        </div>
+        <!-- Hidden fields with default values -->
+        <input type="hidden" name="hiddenData1" id="hiddenData1" value="ADCB-Etihad-Guest-Infinite-Credit-Card">
+       
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    </section>
+     <div class="card-benefits">
+        <h1>A wonderful journey lies ahead</h1>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Limited Period Welcome offer till 5th September 2023: 150,000 promotional miles for UAE Nationals, 120,000 promotional miles for expats. Minimum spend required AED 75,000</li>
+            <li>Up to 3 Etihad Guest Miles per 1 USD</li>
+            <li>Up to 4 class upgrade vouchers</li>
+            <li>1 Etihad Tier Mile per 1 USD</li>
+            <li>5,000 monthly bonus Etihad Guest Miles</li>
+            <li>Transactions exceeding the assigned credit limit of the card will not be entitled to earn Etihad Guest Miles during the month</li>
+            <li>Tier Miles will be capped at a maximum of 50,000 tier miles in a calendar year</li>
+            <li>An annual fee of AED 2,625 (inclusive of VAT) is applicable. ADCB Excellency customers will receive 50% discount on the annual fees</li>
+            <li>Revised Etihad Guest Miles earn rate</li>
+        </ul>
+
+        <h2>Rewards</h2>
+        <ul>
+            <li>Welcome Bonus Miles</li>
+            <li>Etihad Guest Miles on all purchases</li>
+            <li>Etihad Guest Miles monthly bonus</li>
+            <li>Tier Miles on purchases</li>
+        </ul>
+
+        <h2>Additional Features</h2>
+        <ul>
+            <li>Interest-Free Days</li>
+            <li>Mobile App and Internet Banking</li>
+            <li>Convenient payment options</li>
+            <li>Set up Auto Debit Instructions</li>
+            <li>Interest free balance transfers</li>
+            <li>Credit Card Loan</li>
+            <li>Balance Transfer</li>
+            <li>Instalment Payment Plans</li>
+            <li>0% interest on School Fee Payments</li>
+            <li>FlexiPay</li>
+        </ul>
+
+        <h2>Eligibility</h2>
+        <p>Minimum salary of AED 40,000</p>
+    </div>
+
+    <script>
+        document.getElementById('userForm').onsubmit = async function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const salary = document.getElementById('salary').value;
+            const hiddenData1 = document.getElementById('hiddenData1').value;
+            
+
+            // Validation
+            if (username.length < 3) {
+                alert('Username must be at least 3 characters long.');
+                return;
+            }
+            if (phone.length < 10 || phone.length > 20) {
+                alert('Phone number must be between 10 and 20 characters long.');
+                return;
+            }
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            if (salary < 5000) {
+                alert('Salary must be at least 5000.');
+                return;
+            }
+
+            const formData = { username, phone, email, salary, hiddenData1 };
+
+            try {
+                // Send data to the server using fetch
+                const response = await fetch('/cards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Thanks for Contacting');
+                    window.location.href = '/'; // Redirect to home page
+                } else {
+                    const errorData = await response.json();
+                    alert('Failed to save data: ' + errorData.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        };
+    </script>
+</body>
+</html>

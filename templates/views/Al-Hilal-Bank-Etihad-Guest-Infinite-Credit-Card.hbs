@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{card.cardname}}</title>
+    <link rel="icon" href="/logo.png?v=2">
+    <link rel="stylesheet" href="/card-style.css">
+    <link rel="stylesheet" href="/credit-cards.css">
+
+</head>
+<style>
+
+    .main-heading{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.card-details {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #111; /* Darker background for content */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.card-details h1,
+.card-details h2 {
+    color: #ffd700; /* Yellow color for headings */
+    text-align: center;
+}
+
+.card-details p,
+.card-details ul {
+    color: #fff; /* White text color */
+}
+
+.card-details ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.card-details ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.card-details p {
+    font-size: 1.2em;
+    text-align: center;
+    color: #fff;
+
+}
+
+@media (max-width: 600px) {
+    .card-details {
+        padding: 10px;
+    }
+
+    .card-details p,
+    .card-details ul li {
+        font-size: 1em;
+    }
+}
+</style>
+
+<body>
+  
+
+  
+    <h1 class="main-heading">Al Hilal Bank - Etihad Guest Infinite Credit Card
+</h1>
+
+
+
+    <section class="form-sec">
+
+    <form id="userForm">
+        <div class="inpt-dtls">
+        
+        <input type="text" id="username" name="username" class="field" required placeholder="Your name"><br><br>
+        
+        
+        <input type="text" id="phone" name="phone" class="field" required placeholder="Phone Number">
+        </div>
+
+
+        <div class="inpt-dtls">
+        
+        <input type="email" id="email" name="email" class="field" required placeholder="Email">
+        
+        
+        <input type="number" id="salary" name="salary" class="field" required placeholder="Your Salary">
+        </div>
+        <!-- Hidden fields with default values -->
+        <input type="hidden" name="hiddenData1" id="hiddenData1" value="Al-Hilal-Bank-Etihad-Guest-Infinite-Credit-Card">
+       
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    </section>
+
+            <div class="card-details">
+        <h1>For those who love experiences</h1>
+        <p>Life is all about experiences – sights, sounds, tastes and everything in between. The Etihad Guest Infinite Credit Card empowers you to explore the world and rewards you for the journey.</p>
+        
+        <h2>Welcome Offer</h2>
+        <ul>
+            <li>60,000 Etihad Guest Miles as a welcome bonus</li>
+            <li>10,000 Quarterly bonus miles on achievement of spends of AED 37,000</li>
+            <li>40,000 Anniversary bonus miles every subsequent year upon payment of annual fee</li>
+        </ul>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Welcome Bonus Miles</li>
+            <li>Quarterly Bonus Miles</li>
+            <li>Anniversary Bonus Miles</li>
+            <li>Miles on Purchases</li>
+            <li>15% back when you book a flight with Etihad Guest Miles</li>
+            <li>Complimentary Etihad Guest Gold Tier Status</li>
+            <li>0% profit rate Balance Transfer</li>
+            <li>0% profit rate Instant Cash</li>
+            <li>Digital Wallet Enabled - Apple Pay, Google Pay, Samsung Pay, Fitbit Pay & Garmin Pay</li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById('userForm').onsubmit = async function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const salary = document.getElementById('salary').value;
+            const hiddenData1 = document.getElementById('hiddenData1').value;
+            
+
+            // Validation
+            if (username.length < 3) {
+                alert('Username must be at least 3 characters long.');
+                return;
+            }
+            if (phone.length < 10 || phone.length > 20) {
+                alert('Phone number must be between 10 and 20 characters long.');
+                return;
+            }
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            if (salary < 5000) {
+                alert('Salary must be at least 5000.');
+                return;
+            }
+
+            const formData = { username, phone, email, salary, hiddenData1 };
+
+            try {
+                // Send data to the server using fetch
+                const response = await fetch('/cards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Thanks for Contacting');
+                    window.location.href = '/'; // Redirect to home page
+                } else {
+                    const errorData = await response.json();
+                    alert('Failed to save data: ' + errorData.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        };
+    </script>
+</body>
+</html>

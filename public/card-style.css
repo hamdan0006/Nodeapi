@@ -1,0 +1,90 @@
+.main-heading{
+    text-align: center;
+}
+
+.form-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+    /* height: 50vh; */
+    margin: 35px 0px 35px 0px;
+    
+    
+}
+#userForm{
+    width: 70%; 
+     height: 70vh;
+     background: #e1e1e1;
+   
+     padding-top: 120px;
+     padding-left: 14%;
+     
+}
+.inpt-dtls{
+    display: flex;
+    
+   
+}
+.field{
+    width: 320px;
+    height: 50px;
+    margin: 20px 20px 50px 0px;
+    padding: 9px;
+    border: none;
+    background: #e1e1e1;
+    border-bottom: 1px solid #5c5b5b;
+}
+.field:focus{
+    outline: none;
+}
+#submit{
+    width: 170px;
+    height: 50px;
+    border-radius: 15px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.8s ease;
+}
+#submit:hover{
+    background: white;
+    color:black;
+}
+td{
+    color: white;
+}
+@media screen and (max-width :768px){
+    #userForm{
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 70px;
+        
+    }
+    .inpt-dtls{
+        flex-direction: column;
+       
+    }
+    .field{
+        width: 100%;
+        margin: 10px 10px 10px 0px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 992px){
+    #userForm{
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 70px;
+        
+    }
+    .inpt-dtls{
+        flex-direction: column;
+       
+    }
+    .field{
+        width: 100%;
+        margin: 10px 10px 10px 0px;
+    }
+}

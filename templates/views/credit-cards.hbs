@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Cards</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./credit-cards.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+ <link rel="icon" href="/logo.png?v=2" >
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="cross-container">
+        <i class="fa-solid fa-xmark" id="cancel"></i>
+        </div>
+        <div class="navbar-container">
+            <div class="main-menu">
+                <div class="logo">
+                    <img src="/navlogo.png" alt="" id="logo-img">
+                </div>
+                <div class="nav-menu">
+                    <ul class="list">
+                        {{#each menuItems}}
+                        <li class="list-item">
+                            <a href="{{url}}" class="navbar-link">{{text}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="showcase">
+        <div class="overlay"><div class="overlay">
+             <div class="hamburger-icon-container">
+     <i class="fa-solid fa-bars line-icon"></i>
+        </div></div>
+        <div class="navbar-container">
+        </div>
+    </section>
+    
+    <div class="search-section">
+        <div class="search-box">
+        <input type="text" id="cardname" placeholder="Filter by card name" oninput="loadCards(1)">
+         <button id="search-btn" onclick="loadCards(1)">Search</button>
+</div>
+
+        <div class="search-box">
+
+        <select id="issuer" onchange="loadCards(1)">
+            <option value="">Select Your Card</option>
+            <option value="CBD">CBD</option>
+            <option value="Emirates Islamic">Emirates Islamic</option>
+            <option value="ADCB">ADCB</option>
+            <option value="ENBD">Emirates NBD</option>
+            <option value="Al Hilal Bank">Al Hilal Bank</option>
+        </select>
+        </div>
+       
+    </div>
+
+    <div id="cards-container" data-aos="flip-left"></div>
+    <div class="pagination-sec">
+        <button id="prev-btn" onclick="prevPage()" disabled>Previous</button>
+        <span id="page-info"></span>
+        <button id="next-btn" onclick="nextPage()" disabled>Next</button>
+    </div>
+    {{>footers}}
+    
+    <script>
+        const navbar = document.querySelector('.navbar');
+const logo = document.querySelector('.logo a');
+
+const hamburgerIcon = document.querySelector('.hamburger-icon-container');
+const navMenu = document.querySelector('.nav-menu');
+const cancel = document.getElementById("cancel");
+
+hamburgerIcon.addEventListener("click", () => {
+    navbar.classList.add("todefault");
+});
+
+cancel.addEventListener("click", () => {
+    navbar.classList.remove("todefault");
+});
+
+
+        let currentPage = 1;
+        let totalPages = 1;
+
+        function loadCards(page) {
+            const cardname = $('#cardname').val();
+            const issuer = $('#issuer').val();
+            $.ajax({
+                url: `/credit-cards/cards?page=${page}&cardname=${encodeURIComponent(cardname)}&issuer=${encodeURIComponent(issuer)}`,
+                method: 'GET',
+                success: function (response) {
+                    if (response.message === "No results found") {
+                        $('#cards-container').html('<p>No results found</p>');
+                        $('#page-info').text('');
+                        $('#prev-btn').prop('disabled', true);
+                        $('#next-btn').prop('disabled', true);
+                        currentPage = 1; // Reset currentPage to 1
+                        totalPages = 1; // Reset totalPages to 1
+                        return;
+                    }
+
+                    // Extract data from the response
+                    const { totalPages: total, currentPage: current, data } = response;
+
+                    // Update the global variables
+                    totalPages = total;
+                    currentPage = current;
+
+                    // Clear previous content and append new cards
+                    $('#cards-container').html('');
+                    data.forEach(card => {
+                        const cardUrl = `/credit-cards/${card.cardname.replace(/\s+/g, '-').toLowerCase()}`;
+                        $('#cards-container').append(`
+                            <div class="cards-section" onclick="redirectToCard('${cardUrl}')">
+                            <div class="image-holder">
+                                <img src="${card.imageUrl}" alt="Card Image" class="card-img">
+                                </div>
+
+                                <h3 class = "card-heading">${card.cardname}</h3>
+                                <p class = "card-dtls">Minimum Salary: AED ${card.MinimumSalary}</p>
+                                <p>Annual Fee: AED ${card.AnnualFee}</p>
+                                <p>Rate: ${card.Rate}%</p>
+                                <p>Salary Transfer: ${card.SalaryTransfer ? 'Yes' : 'No'}</p>
+                            </div>
+                        `);
+                    });
+
+                    // Update pagination info
+                    $('#page-info').text(`Page ${currentPage} of ${totalPages}`);
+
+                    // Enable/disable pagination buttons
+                    $('#prev-btn').prop('disabled', currentPage <= 1);
+                    $('#next-btn').prop('disabled', currentPage >= totalPages);
+                },
+                error: function (error) {
+                    console.error('Error fetching data:', error);
+                }
+            });
+        }
+
+        function redirectToCard(cardUrl) {
+            window.location.href = cardUrl;
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                loadCards(currentPage - 1);
+                console.log('Prev Page:', currentPage - 1);
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                loadCards(currentPage + 1);
+                console.log('Next Page:', currentPage + 1);
+            }
+        }
+
+        $(document).ready(function () {
+            loadCards(1);
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            delay: 350,
+            duration: 500,
+            easing: 'ease',
+        });
+    </script>
+
+</body>
+
+</html> 

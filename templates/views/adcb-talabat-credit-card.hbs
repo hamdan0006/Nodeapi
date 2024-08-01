@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{card.cardname}}</title>
+    <link rel="icon" href="/logo.png?v=2">
+    <link rel="stylesheet" href="/card-style.css">
+    <link rel="stylesheet" href="/credit-cards.css">
+
+</head>
+<style>
+ 
+
+.card-benefits {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.card-benefits h1,
+.card-benefits h2 {
+    color: #333;
+    text-align: center;
+}
+
+.card-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-benefits ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.card-benefits ul li strong {
+    color: #e67e22;
+}
+
+.keep-in-mind,
+.other-benefits {
+    margin-top: 20px;
+}
+
+.keep-in-mind p,
+.other-benefits ul li {
+    margin: 10px 0;
+}
+
+.other-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.other-benefits ul li {
+    font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+    .card-benefits {
+        padding: 10px;
+    }
+
+    .card-benefits ul li {
+        font-size: 1em;
+    }
+
+    .other-benefits ul li {
+        font-size: 1em;
+    }
+}
+
+</style>
+<body>
+  
+    <h1 class="main-heading">ADCB talabat credit-card</h1>
+
+    <section class="form-sec">
+
+    <form id="userForm">
+        <div class="inpt-dtls">
+        
+        <input type="text" id="username" name="username" class="field" required placeholder="Your name"><br><br>
+        
+        
+        <input type="text" id="phone" name="phone" class="field" required placeholder="Phone Number">
+        </div>
+
+
+        <div class="inpt-dtls">
+        
+        <input type="email" id="email" name="email" class="field" required placeholder="Email">
+        
+        
+        <input type="number" id="salary" name="salary" class="field" required placeholder="Your Salary">
+        </div>
+        <!-- Hidden fields with default values -->
+        <input type="hidden" name="hiddenData1" id="hiddenData1" value="adcb-talabat-credit-card">
+       
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    </section>
+
+
+    <div class="card-benefits">
+        <h1>Your Taste. Your Card. Your Benefits</h1>
+        <ul>
+            <li><strong>35% back on talabat orders</strong> - applicable on first 10 orders every month, up to AED 35 per order</li>
+            <li><strong>Unlimited free delivery</strong> - on talabat pro orders with a minimum order value of AED 50</li>
+            <li><strong>Welcome bonus</strong> - on achieving a minimum spend of AED 2,500 in 45 days</li>
+            <li><strong>Up to 1.25% back on other purchases</strong> - earn up to 1.25% as talabat credit on all other retail purchases</li>
+            <li><strong>Personalised card design</strong> - choose your card design to reflect your food personality</li>
+            <li><strong>Free for life</strong> - no annual fee, ever</li>
+            <li><strong>Redeem talabat credit for talabat orders</strong> - enjoy free talabat orders by redeeming talabat credit</li>
+        </ul>
+        <div class="keep-in-mind">
+            <h2>Keep in mind</h2>
+            <p>35% back on talabat orders will be rewarded as talabat credit and will be applicable only on the first ten orders every month. Each order is capped at AED 35 with a cumulative total of AED 350 per month.</p>
+            <p>Welcome Bonus of AED 500 will be rewarded as talabat credit and subject to a minimum spend of AED 2,500 within 45 days of card issuance.</p>
+            <p>Unlimited free delivery will be applicable on all talabat pro orders with a minimum order value of AED 50 on food and AED 100 on talabat mart, groceries and pharmacy.</p>
+        </div>
+        <div class="other-benefits">
+            <h2>Other credit card benefits</h2>
+            <ul>
+                <li>Mobile and digital wallets</li>
+                <li>Credit shield</li>
+                <li>Card control</li>
+                <li>Instalments payment plans</li>
+                <li>School fee payments</li>
+                <li>FlexiPay</li>
+                <li>Balance transfer</li>
+                <li>Credit card loan</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('userForm').onsubmit = async function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const salary = document.getElementById('salary').value;
+            const hiddenData1 = document.getElementById('hiddenData1').value;
+           
+
+            // Validation
+            if (username.length < 3) {
+                alert('Username must be at least 3 characters long.');
+                return;
+            }
+            if (phone.length < 10 || phone.length > 20) {
+                alert('Phone number must be between 10 and 20 characters long.');
+                return;
+            }
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            if (salary < 5000) {
+                alert('Salary must be at least 5000.');
+                return;
+            }
+
+            const formData = { username, phone, email, salary, hiddenData1 };
+
+            try {
+                // Send data to the server using fetch
+                const response = await fetch('/cards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Thanks for Contacting');
+                    window.location.href = '/'; // Redirect to home page
+                } else {
+                    const errorData = await response.json();
+                    alert('Failed to save data: ' + errorData.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        };
+    </script>
+</body>
+</html>

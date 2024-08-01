@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./contact-us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="icon" href="/logo.png?v=2" >
+
+
+</head>
+<body>
+    <nav class="navbar">
+         <div class="cross-container">
+        <i class="fa-solid fa-xmark" id="cancel"></i>
+        </div>
+        
+        <div class="navbar-container">
+            
+            <div class="main-menu">
+
+        <div class="navbar-container">
+            <div class="main-menu">
+                <div class="logo">
+                    <img src="/navlogo.png" id="logo-img" alt="">
+                </div>
+                <div class="nav-menu">
+                    <ul class="list">
+                        {{#each menuItems}}
+                            <li class="list-item">
+                                <a href="{{url}}" class="navbar-link">{{text}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="showcase">
+        <div class="overlay">
+            <div class="hamburger-icon-container">
+     <i class="fa-solid fa-bars line-icon"></i>
+        </div>
+
+        </div>
+        <div class="navbar-container">
+            <div class="content" data-aos="fade-up">
+                <h2>Contact US</h2>
+               
+            </div>
+        </div>
+    </section>
+
+<section class="contact-form-sec">
+    <div class="contact-form">
+        <div class="contact-heading">
+            <h1>Any question? Fill the contact form</h1>
+            <p>Send us a message</p>
+        </div>
+        <form id="contactForm" action="/contact-us" method="post">
+            <div class="dtl-sec-inpt">
+                <input type="text" name="username" placeholder="Your Name" class="inpt-fields" required>
+                <input type="email" name="email" placeholder="Your Email" class="inpt-fields" required>
+            </div>
+            <div class="dtl-sec-inpt2">
+                <textarea name="message" placeholder="Your Message" required class="inpt-fields text-area"></textarea>
+            </div>
+            <button type="submit" id="submit-btn">Send Message</button>
+        </form>
+    </div>
+    </section>
+    {{>footers}}
+
+    <script>
+
+    const navbar = document.querySelector('.navbar');
+const logo = document.querySelector('.logo a');
+
+const hamburgerIcon = document.querySelector('.hamburger-icon-container');
+const navMenu = document.querySelector('.nav-menu');
+const cancel = document.getElementById("cancel");
+
+hamburgerIcon.addEventListener("click", () => {
+    navbar.classList.add("todefault");
+});
+
+cancel.addEventListener("click", () => {
+    navbar.classList.remove("todefault");
+});
+
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) {
+                navbar.classList.add('scrolled');
+                logo.style.color = '#fff'; // Set logo text color to white
+            } else {
+                navbar.classList.remove('scrolled');
+                logo.style.color = ''; // Reset logo text color
+            }
+        });
+
+
+
+       const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const username = formData.get('username');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    try {
+        const response = await fetch('/contact-us', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, email, message })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to submit form');
+        }
+
+        const data = await response.json();
+        alert(data.message); // Display success message from server
+        window.location.href = '/'; // Redirect to home page after successful submission
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred, please try again.'); // Display generic error message
+    }
+});
+
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init({
+    delay: 350, 
+  duration: 500, 
+  easing: 'ease',
+  });
+</script>
+
+</body>
+</html>

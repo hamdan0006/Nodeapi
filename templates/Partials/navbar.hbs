@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    
+    <style>
+        /* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+.nav-menu a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-icon {
+    width: 30px;
+    height: 2px;
+    background: white;
+    position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    top: 8px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0;
+    }
+
+    .nav-menu a {
+        padding: 16px;
+        text-align: center;
+        border-bottom: 1px solid #444;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Brand</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="menu-icon"></span>
+            </button>
+            <ul class="nav-menu">
+              {{#each menuItems}}
+                            <li class="list-item">
+                                <a href="{{url}}" class="navbar-link">{{text}}</a>
+                            </li>
+                        {{/each}}
+            </ul>
+        </nav>
+    </header>
+    <script>
+        // script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+});
+
+    </script>
+</body>
+</html>

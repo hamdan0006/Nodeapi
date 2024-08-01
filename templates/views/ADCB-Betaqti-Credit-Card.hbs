@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{card.cardname}}</title>
+    <link rel="icon" href="/logo.png?v=2">
+    <link rel="stylesheet" href="/card-style.css">
+    <link rel="stylesheet" href="/credit-cards.css">
+
+</head>
+<style>
+
+.card-benefits {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.card-benefits h1,
+.card-benefits h2 {
+    color: #ffd700;
+    text-align: center;
+}
+
+.card-benefits h2 {
+    margin-top: 20px;
+}
+
+.card-benefits p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.card-benefits ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.card-benefits ul li {
+    color: white;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+    .card-benefits {
+        padding: 10px;
+    }
+
+    .card-benefits p,
+    .card-benefits ul li {
+        font-size: 1em;
+    }
+}
+</style>
+<body>
+    {{!-- {{>navbar}} --}}
+
+  
+    <h1 class="main-heading">ADCB Betaqti Credit-Card</h1>
+
+    <section class="form-sec">
+
+    <form id="userForm">
+        <div class="inpt-dtls">
+        
+        <input type="text" id="username" name="username" class="field" required placeholder="Your name"><br><br>
+        
+        
+        <input type="text" id="phone" name="phone" class="field" required placeholder="Phone Number">
+        </div>
+
+
+        <div class="inpt-dtls">
+        
+        <input type="email" id="email" name="email" class="field" required placeholder="Email">
+        
+        
+        <input type="number" id="salary" name="salary" class="field" required placeholder="Your Salary">
+        </div>
+        <!-- Hidden fields with default values -->
+        <input type="hidden" name="hiddenData1" id="hiddenData1" value="ADCB-Betaqti-Credit-Card">
+       
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    </section>
+
+      <div class="card-benefits">
+        <h1>Exclusively for Emiratis</h1>
+        <p>Your unique personality deserves a card that represents it. A metal, laser-etched card that showcases your name and grants you complete control of the card, in addition to travel and lifestyle benefits and much more.</p>
+
+        <h2>Benefits</h2>
+        <ul>
+            <li>VOX Cinemas: Buy one, get one free including THEATRE</li>
+            <li>Uform fitness: Complimentary access to all clubs across the UAE</li>
+            <li>Caribou Coffee: Buy one, get one free on coffee</li>
+            <li>Airport Lounges: Complimentary access to over 1,000 lounges around the world</li>
+            <li>300,000 TouchPoints welcome bonus</li>
+            <li>An annual fee of AED 2,100 (inclusive of VAT) is applicable</li>
+        </ul>
+
+        <h2>Rewards</h2>
+        <ul>
+            <li>Receive 300,000 TouchPoints as a welcome gift</li>
+            <li>Earn up to 3 TouchPoints for every AED 1 spent with your card</li>
+        </ul>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Luxurious Cinema Experience</li>
+            <li>Fitness Center Access</li>
+            <li>Experience Yas Island Parks</li>
+            <li>Concierge Service</li>
+            <li>Chauffeur Offer</li>
+            <li>Premium Hotel Benefits</li>
+            <li>Global Airport Lounge Access</li>
+            <li>Hertz President's Circle Status</li>
+            <li>Complimentary Hotel Nights</li>
+            <li>Avis Rent a Car Benefits</li>
+            <li>Travel Insurance</li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById('userForm').onsubmit = async function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const salary = document.getElementById('salary').value;
+            const hiddenData1 = document.getElementById('hiddenData1').value;
+            
+
+            // Validation
+            if (username.length < 3) {
+                alert('Username must be at least 3 characters long.');
+                return;
+            }
+            if (phone.length < 10 || phone.length > 20) {
+                alert('Phone number must be between 10 and 20 characters long.');
+                return;
+            }
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            if (salary < 5000) {
+                alert('Salary must be at least 5000.');
+                return;
+            }
+
+            const formData = { username, phone, email, salary, hiddenData1,};
+
+            try {
+                // Send data to the server using fetch
+                const response = await fetch('/cards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Thanks for Contacting');
+                    window.location.href = '/'; // Redirect to home page
+                } else {
+                    const errorData = await response.json();
+                    alert('Failed to save data: ' + errorData.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        };
+    </script>
+</body>
+</html>

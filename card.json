@@ -1,0 +1,506 @@
+[
+    {
+        "imageUrl": "/card-images/talabat-card.png",
+        "cardname": "ADCB-talabat-credit-card",
+        "MinimumSalary": 5000,
+        "AnnualFee": 0,
+        "Rate": 3.69,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+       
+    },
+    {
+        "imageUrl": "/card-images/Lulu_Titanium_CC_Large_tcm41-170997.png",
+        "cardname": "ADCB-Lulu-Titanium-Credit-Card",
+        "MinimumSalary": 5000,
+        "AnnualFee": 0,
+        "Rate": 3.69,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+        
+    },
+    {
+        "imageUrl": "/card-images/Accor-infinitecc.png",
+        "cardname": "ADCB-Infinite-Credit-Card",
+        "MinimumSalary": 40000,
+        "AnnualFee": 1575,
+        "Rate": 3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/Acco-signature-cc.png",
+        "cardname": "ADCB-Signature-Credit-Card",
+        "MinimumSalary": 20000,
+        "AnnualFee": 1050,
+        "Rate": 3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/titanium-and-gold.png",
+        "cardname": "ADCB-TouchPoints-Titanium-and-Gold-Credit-Card",
+        "MinimumSalary": 5000,
+        "AnnualFee": 0,
+        "Rate": 3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/betaqti.jpg",
+        "cardname": "ADCB-Betaqti-Credit-Card",
+        "MinimumSalary": 5000,
+        "AnnualFee": 2100,
+        "Rate":2.5,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/Etihad-Guest-Infinite.png",
+        "cardname": "ADCB-Etihad-Guest-Infinite-Credit-Card",
+        "MinimumSalary": 40000,
+        "AnnualFee": 2100,
+        "Rate":3.69,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/LULU-PLATINUM.png",
+        "cardname": "ADCB-Lulu-Platinum-Credit-Card",
+        "MinimumSalary": 8000,
+        "AnnualFee": 0,
+        "Rate":3.69,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/adcb-platinum-card-tp.jpg",
+        "cardname": "ADCB-TouchPoints-Platinum-Credit-Card",
+        "MinimumSalary": 10000,
+        "AnnualFee": 0,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/TouchPoints-Infinite.jpg",
+        "cardname": "ADCB-TouchPoints-Infinite-Credit-Card",
+        "MinimumSalary": 40000,
+        "AnnualFee":  1050,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/ADCB-365.png",
+        "cardname": "ADCB-365-Cashback-Credit-Card",
+        "MinimumSalary": 8000,
+        "AnnualFee":  0,
+        "Rate":3,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/ADCB-guest-platinum cc.png",
+        "cardname": "ADCB-Etihad-Guest-Platinum-Credit-Card",
+        "MinimumSalary": 8000,
+        "AnnualFee":  0,
+        "Rate":3,
+        "SalaryTransfer": false,
+        "issuer" : "ADCB"
+
+    },
+    {
+        "imageUrl": "/card-images/Al-hilalSmart-platinum-card.jpg",
+        "cardname": "Al-Hilal-Bank-Smart-Covered-Platinum-Card",
+        "MinimumSalary": 5000,
+        "AnnualFee":  0,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "Al Hilal Bank"
+
+    },
+    {
+        "imageUrl": "/card-images/AHB-emiratiWorld.png",
+        "cardname": "Al-Hilal-Bank-Emirati-World-MasterCard",
+        "MinimumSalary":  5000,
+        "AnnualFee":  787,
+        "Rate":2.99,
+        "SalaryTransfer": false,
+        "issuer" : "Al Hilal Bank"
+
+    },
+    {
+        "imageUrl": "/card-images/etihad-signature-card-al-hilal.png",
+        "cardname": "Al-Hilal-Bank-Etihad-Guest-Signature-Credit-Card",
+        "MinimumSalary":  20000,
+        "AnnualFee":  1050,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "Al Hilal Bank"
+
+    },
+    {
+        "imageUrl": "/card-images/al-hilal-emarati.png",
+        "cardname": "Al-Hilal-Bank-Emirati-World-Elite-Exclusive-MasterCard",
+        "MinimumSalary":  45000,
+        "AnnualFee":  5250,
+        "Rate":1.99,
+        "SalaryTransfer": false,
+        "issuer" : "Al Hilal Bank"
+
+    },
+    {
+        "imageUrl": "/card-images/etihad-infinite-card_tcm51-al-h.png",
+        "cardname": "Al-Hilal-Bank-Etihad-Guest-Infinite-Credit-Card",
+        "MinimumSalary":  30000,
+        "AnnualFee":  2100,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "Al Hilal Bank"
+
+    },
+    {
+        "imageUrl": "/card-images/etihad-platinum-card_tcm50-237690.png",
+        "cardname": "Al-Hilal-Bank-Etihad-Guest-Platinum-Credit-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  525,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "Al Hilal Bank"
+
+    },
+    {
+        "imageUrl": "/card-images/Smiles-Platinum.png",
+        "cardname": "CBD-Smiles-Platinum",
+        "MinimumSalary":  5000,
+        "AnnualFee":  208,
+        "Rate":3.85,
+        "SalaryTransfer": false,
+        "issuer" : "CBD"
+        
+    },
+    {
+        "imageUrl": "/card-images/Smiles-Signature.jpg",
+        "cardname": "CBD-Smiles-Signature-Card",
+        "MinimumSalary":  12000,
+        "AnnualFee":  525,
+        "Rate":3.85,
+        "SalaryTransfer": false,
+        "issuer" : "CBD"
+
+    },
+    {
+        "imageUrl": "/card-images/cbd-one-card.png",
+        "cardname": "CBD-One-Vip-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  1247,
+        "Rate":3.85,
+        "SalaryTransfer": false,
+        "issuer" : "CBD"
+
+    },
+    {
+        "imageUrl": "/card-images/cbd-one-card.png",
+        "cardname": "CBD-One-Starter-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  0,
+        "Rate":3.85,
+        "SalaryTransfer": false,
+        "issuer" : "CBD"
+
+    },
+    {
+        "imageUrl": "/card-images/cbd-visa-platinum-(new).jpg",
+        "cardname": "CBD-Visa-Platinum-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  0,
+        "Rate":3.85,
+        "SalaryTransfer": false,
+        "issuer" : "CBD"
+
+    },
+    {
+        "imageUrl": "/card-images/visa-infinite-cbd.jpg",
+        "cardname": "CBD-Visa-Infinite-Credit-Card",
+        "MinimumSalary":  15000,
+        "AnnualFee":  787,
+        "Rate":3.85,
+        "SalaryTransfer": false,
+        "issuer" : "CBD"
+
+    },
+    {
+        "imageUrl": "/card-images/CBD-Super-saver.png",
+        "cardname": "CBD-Super-Saver-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  420,
+        "Rate":3.85,
+        "SalaryTransfer": false,
+        "issuer" : "CBD"
+
+    },
+    {
+        "imageUrl": "/card-images/cbd-one-card.png",
+        "cardname": "CBD-One-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  0,
+        "Rate":3.85,
+        "SalaryTransfer": false,
+        "issuer" : "CBD"
+
+    },
+    {
+        "imageUrl": "/card-images/skywards-emirates.png",
+        "cardname": "Emirates-Islamic-Skywards-Signature-Credit-Card",
+        "MinimumSalary":  12000,
+        "AnnualFee":  735,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+        
+    },
+    {
+        "imageUrl": "/card-images/cashback-plus-card-emi.jpg",
+        "cardname": "Emirates-Islamic-Cashback-Plus-Credit-Card",
+        "MinimumSalary":  12000,
+        "AnnualFee":  313,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/premium-guest-premium-emi.png",
+        "cardname": "Emirates-Islamic-Etihad-Guest-Premium-Credit-Card",
+        "MinimumSalary":  15000,
+        "AnnualFee":  1500,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/saqer-emi.png",
+        "cardname": "Emirates-Islamic-Etihad-Guest-Saqer-Credit-Card",
+        "MinimumSalary":  10000,
+        "AnnualFee":  934,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/EI-emirati-emi.png",
+        "cardname": "Emirates-Islamic-Emarati-Credit-Card",
+        "MinimumSalary":  12000,
+        "AnnualFee":  0,
+        "Rate":3.39,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/Flex Elite-emi.png",
+        "cardname": "Emirates-Islamic-Flex-Elite-Credit-Card",
+        "MinimumSalary":  15000,
+        "AnnualFee":  735,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/cashback-emi.png",
+        "cardname": "Emirates-Islamic-Cashback-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  367,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/RTA-Card-emi.png",
+        "cardname": "Emirates-Islamic-RTA-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  0,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/Flex-emi.png",
+        "cardname": "Emirates-Islamic-Flex-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  0,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/skywards inifinite-emi.png",
+        "cardname": "Emirates-Islamic-Skywards-Infinite-Credit-Card",
+        "MinimumSalary":  25000,
+        "AnnualFee":  2000,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/ameera-emi.png",
+        "cardname": "Emirates-Islamic-Etihad-Guest-Ameera-Credit-Card",
+        "MinimumSalary":  10000,
+        "AnnualFee":  733,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/platinum-etihad-emi.png",
+        "cardname": "Emirates-Islamic-Etihad-Guest-Platinum-Credit-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  199,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/black-emi.png",
+        "cardname": "Emirates-Islamic-Skywards-Black-Credit-Card",
+        "MinimumSalary":  35000,
+        "AnnualFee":  4200,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "Emirates Islamic"
+
+    },
+    {
+        "imageUrl": "/card-images/cashback-nbd.png",
+        "cardname": "NBD-Emirates-Islamic-Cashback-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  367,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+    },
+
+    {
+        "imageUrl": "/card-images/cashback-nbd.png",
+        "cardname": "NBD-Emirates-Islamic-Cashback-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  367,
+        "Rate":3.49,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/EmaarVisa_Family_Card.png",
+        "cardname": "Emirates-NBD-UBy-Emaar-Visa-Family-Card",
+        "MinimumSalary":  5000,
+        "AnnualFee":  0,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/emaar-signature-nbd.png",
+        "cardname": "Emirates-ENBD-U-By-Emaar-Signature-Credit-Cards",
+        "MinimumSalary":  15000,
+        "AnnualFee":  262,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/manUtdCard.png",
+        "cardname": "Emirates-NBD-Manchester-United-Credit-Cards",
+        "MinimumSalary":  5000,
+        "AnnualFee":  0,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/go4itPlatinum.png",
+        "cardname": "Emirates-NBD-Go4it-Platinum-Credit-Cards",
+        "MinimumSalary":  12000,
+        "AnnualFee":  0,
+        "Rate":3.25,
+        "SalaryTransfer": true,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/dinersClubCard.png",
+        "cardname": "Emirates-NBD-Diners-Club-Credit-Cards",
+        "MinimumSalary":  10000,
+        "AnnualFee":  0,
+        "Rate":3.25,
+        "SalaryTransfer": true,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/NBD-platinium.png",
+        "cardname": "Emirates-NBD-Platinum-Credit-Cards",
+        "MinimumSalary":  12000,
+        "AnnualFee":  700,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/go4itGold.png",
+        "cardname": "Emirates-NBD-Go4it-Gold-Credit-Cards",
+        "MinimumSalary":  6000,
+        "AnnualFee":  0,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/Titanium_nbd.png",
+        "cardname": "Emirates-NBD-Titanium-Credit-Cards",
+        "MinimumSalary":  5000,
+        "AnnualFee":  0,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+    },
+    {
+        "imageUrl": "/card-images/skywardsInfinite-nbd.png",
+        "cardname": "Emirates-NBD-Skywards-Infinite-Credit-Cards",
+        "MinimumSalary":  30000,
+        "AnnualFee":  1575,
+        "Rate":3.25,
+        "SalaryTransfer": false,
+        "issuer" : "ENBD"
+
+        
+    }
+    
+    
+]

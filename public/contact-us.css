@@ -1,0 +1,145 @@
+.contact-form-sec{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;  
+}
+.contact-form{
+    width: 85%;
+    height: 70vh;
+    background: #EFEFEF;
+    padding: 30px;
+}
+.contact-heading{
+    font-family: "Poppins", sans-serif;
+}
+.contact-heading h1{
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 12px;
+
+}
+.contact-heading p{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.dtl-sec-inpt{
+    /* padding: 20px; */
+}
+.inpt-fields{
+    width: 45%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #b3b2b2 ;
+    margin-bottom: 10px;
+    background: transparent;
+}
+.inpt-fields:focus{
+    outline: none;
+    background: transparent;
+
+}
+.dtl-sec-inpt2{
+    /* padding: 20px; */
+}
+.text-area{
+    width: 90%;
+    height: 30vh;
+    padding-top: 20px;
+    resize: none;
+}
+#submit-btn{
+    width: 170px;
+    height: 58px;
+    background: black;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#submit-btn:hover{
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
+
+@media screen and (max-width :768px){
+    
+    .contact-form-sec{
+        height: 95vh;
+        margin-bottom: 30px;
+    }
+    .dtl-sec-inpt{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    .inpt-fields{
+        width: 100%;
+    }
+    .contact-heading h1{
+        font-size: 25px;
+        font-weight: 400;
+        margin-bottom: 12px;
+    
+    }
+    .contact-heading p{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 15px;
+    }
+    .text-area{
+        width: 90%;
+        height: 20vh;
+        padding-top: 20px;
+        resize: none;
+    }
+    #submit-btn{
+        width: 150px;
+        height: 50px;
+        background: black;
+        
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px){
+
+    .contact-form-sec{
+        height: 95vh;
+        margin-bottom: 30px;
+    }
+    .dtl-sec-inpt{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    .inpt-fields{
+        width: 100%;
+    }
+    .contact-heading h1{
+        font-size: 25px;
+        font-weight: 400;
+        margin-bottom: 12px;
+    
+    }
+    .contact-heading p{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 15px;
+    }
+    .text-area{
+        width: 90%;
+        height: 20vh;
+        padding-top: 20px;
+        resize: none;
+    }
+    #submit-btn{
+        width: 150px;
+        height: 50px;
+        background: black;
+        
+    }
+
+}
