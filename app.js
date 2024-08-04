@@ -8,6 +8,14 @@ const SendData = require('./models/user-model');
 const webContact = require('./models/contact-us-models');
 const creditCardrouter = require('./Router/credit-cardsRouter');
 
+app.use(cors(
+    {
+        origin: ['http://deploy-mern-1whq.vercel.app'],
+        methods: ['GET', 'POST'],
+        credentials :true
+    }
+))
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
